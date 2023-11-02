@@ -147,3 +147,21 @@ ls
 ```
 ![3 EP1](https://github.com/KairaTomaz/Aula_somaticoEP2/assets/149710213/019e0272-140b-412e-8e4a-aa82666d5c00)
 
+### Calculando contaminação
+```
+./gatk-4.2.2.0/gatk GetPileupSummaries \
+	-I WP312_sorted_rmdup_F4.bam  \
+	-V af-only-gnomad.hg38.vcf.gz \
+	-L WP312_coverageBed20x.interval_list \
+	-O WP312.table
+```
+```
+./gatk-4.2.2.0/gatk CalculateContamination \
+-I WP312.table \
+-O WP312.contamination.table
+```
+### Visualizando resultado
+```
+cat WP312.contamination.table
+```
+
