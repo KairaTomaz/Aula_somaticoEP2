@@ -197,5 +197,8 @@ q
 ```
 zgrep -c ^chr9 WP312.filtered.pon.vcf.gz
 ```
-
+### Quantas variantes passaram no filtro?
+```
+zgrep ^chr9 WP312.filtered.pon.vcf.gz | grep -c PASS
+```
 
