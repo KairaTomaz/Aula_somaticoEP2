@@ -86,3 +86,13 @@ time samtools index WP312_sorted.bam
 time samtools rmdup WP312_sorted.bam WP312_sorted_rmdup_F4.bam
 time samtools index WP312_sorted_rmdup_F4.bam
 ```
+### Instalando a ferramenta bedtools
+```
+brew install bedtools
+```
+
+### Gerando o arquivo BED
+```bedtools bamtobed -i WP312_sorted_rmdup_F4.bam > WP312_sorted_rmdup.bed
+bedtools merge -i WP312_sorted_rmdup.bed > WP312_sorted_rmdup_merged.bed
+bedtools sort -i WP312_sorted_rmdup_merged.bed > WP312_sorted_rmdup_merged_sorted.bed
+```
