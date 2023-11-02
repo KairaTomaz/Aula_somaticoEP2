@@ -76,5 +76,4 @@ SRR8856724_2.fastq.gz > WP312.sam
 ```
 ls
 ```
-
-
+![1 EP1](https://github.com/KairaTomaz/Aula_somaticoEP2/assets/149710213/578bef40-bd83-446e-b60a-73cde378f461)
