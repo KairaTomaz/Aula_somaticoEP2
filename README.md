@@ -103,5 +103,6 @@ bedtools sort -i WP312_sorted_rmdup_merged.bed > WP312_sorted_rmdup_merged_sorte
 ```
 ls
 ```
+![2 EP1](https://github.com/KairaTomaz/Aula_somaticoEP2/assets/149710213/8f49fca1-4755-4217-8d27-28358a8bfc63)
 
 
