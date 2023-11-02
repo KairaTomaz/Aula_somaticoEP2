@@ -116,6 +116,16 @@ bedtools coverage -a WP312_sorted_rmdup_merged_sorted.bed \
 -b WP312_sorted_rmdup_F4.bam -mean \
 > WP312_coverageBed.bed
 ```
-
+### Realizando filtro no arquivo gerado (total de reads >=20)
+```
+cat WP312_coverageBed.bed | \
+awk -F "\t" '{if($4>=20){print}}' \
+> WP312_coverageBed20x.bed
+```
+### Instalando GATK4
+```
+wget -c https://github.com/broadinstitute/gatk/releases/download/4.2.2.0/gatk-4.2.2.0.zip
+unzip gatk-4.2.2.0.zip
+```
 
 
