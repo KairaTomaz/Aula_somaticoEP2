@@ -105,4 +105,17 @@ ls
 ```
 ![2 EP1](https://github.com/KairaTomaz/Aula_somaticoEP2/assets/149710213/8f49fca1-4755-4217-8d27-28358a8bfc63)
 
+### Cobertura Média
+```
+git clone https://github.com/circulosmeos/gdown.pl.git
+./gdown.pl/gdown.pl  https://drive.google.com/file/d/1pTMpZ2eIboPHpiLf22gFIQbXU2Ow26_E/view?usp=drive_link WP312_sorted_rmdup_F4.bam
+./gdown.pl/gdown.pl  https://drive.google.com/file/d/10utrBVW-cyoFPt5g95z1gQYQYTfXM4S7/view?usp=drive_link WP312_sorted_rmdup_F4.bam.bai
+```
+```
+bedtools coverage -a WP312_sorted_rmdup_merged_sorted.bed \
+-b WP312_sorted_rmdup_F4.bam -mean \
+> WP312_coverageBed.bed
+```
+
+
 
