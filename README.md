@@ -185,6 +185,11 @@ cat WP312.contamination.table
 	--contamination-table WP312.contamination.table \
 	-O WP312.filtered.pon.vcf.gz
 ```
+## Ao final desta etapa vc deverá ter esses aquivos e diretórios:
+```
+ls
+```
+![4 EP1](https://github.com/KairaTomaz/Aula_somaticoEP2/assets/149710213/6dc3464b-b712-4fe7-b2a4-4c50f540751e)
 ### Visualizando resultado
 ```
 less -SN WP312.filtered.pon.vcf.gz
