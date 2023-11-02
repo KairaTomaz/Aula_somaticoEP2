@@ -145,6 +145,5 @@ unzip gatk-4.2.2.0.zip
 ```
 ls
 ```
-
-
+![3 EP1](https://github.com/KairaTomaz/Aula_somaticoEP2/assets/149710213/019e0272-140b-412e-8e4a-aa82666d5c00)
 
