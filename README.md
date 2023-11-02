@@ -128,4 +128,23 @@ wget -c https://github.com/broadinstitute/gatk/releases/download/4.2.2.0/gatk-4.
 unzip gatk-4.2.2.0.zip
 ```
 
+### Gerando o arquivo .dict
+```
+./gatk-4.2.2.0/gatk CreateSequenceDictionary -R chr9.fa -O chr9.dict
+```
+### Gerando o arquivo interval_list
+```
+./gatk-4.2.2.0/gatk BedToIntervalList -I WP312_coverageBed20x.bed \
+-O WP312_coverageBed20x.interval_list -SD chr9.dict
+```
+### Convertendo Bed para Interval_list
+```./gatk-4.2.2.0/gatk BedToIntervalList -I WP312_coverageBed20x.bed \
+-O WP312_coverageBed20x.interval_list -SD chr9.dict
+```
+## Ao final desta etapa vc deverá ter esses aquivos e diretórios:
+```
+ls
+```
+
+
 
