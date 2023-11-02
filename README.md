@@ -1,6 +1,8 @@
 # Aula_somaticoEP1
 OBS.: Para todo esse papeline, utilizar o GitPod no terminal Bash
-## Fazendo o download dos arquivos que serão utilizados
+## Referências:
+(https://github.com/renatopuga/somaticoEP1/blob/main/README.md)
+(https://github.com/renatopuga/somaticoEP2)
 ### Instalando ferramentas
 ```
 brew install sratoolkit
@@ -163,5 +165,23 @@ ls
 ### Visualizando resultado
 ```
 cat WP312.contamination.table
+```
+### MuTect2 Call
+```
+./gatk-4.2.2.0/gatk Mutect2 \
+  -R chr9.fa \
+  -I WP312_sorted_rmdup_F4.bam \
+  --germline-resource af-only-gnomad.hg38.vcf.gz  \
+  --panel-of-normals 1000g_pon.hg38.vcf.gz \
+  -L WP312_coverageBed20x.interval_list \
+  -O WP312.somatic.pon.vcf.gz
+```
+### MuTect2 FilterMutectCalls
+```
+./gatk-4.2.2.0/gatk FilterMutectCalls \
+	-R chr9.fa \
+	-V WP312.somatic.pon.vcf.gz \
+	--contamination-table WP312.contamination.table \
+	-O WP312.filtered.pon.vcf.gz
 ```
 
