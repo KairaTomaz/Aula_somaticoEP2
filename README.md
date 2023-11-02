@@ -2,6 +2,7 @@
 OBS.: Para todo esse papeline, utilizar o GitPod no terminal Bash
 ## Referências:
 (https://github.com/renatopuga/somaticoEP1/blob/main/README.md)
+
 (https://github.com/renatopuga/somaticoEP2)
 ### Instalando ferramentas
 ```
