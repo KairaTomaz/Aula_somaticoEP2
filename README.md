@@ -209,4 +209,8 @@ zgrep ^chr9 WP312.filtered.pon.vcf.gz | grep -c PASS
 
 ### **Download Chain**
 
+### VCF comparação
+![5 EP1_VCF_Comparação](https://github.com/KairaTomaz/Aula_somaticoEP2/assets/149710213/044573b8-2555-4ab5-815f-74c05a9c7ae9)
+
+
 
