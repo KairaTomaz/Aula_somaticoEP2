@@ -185,4 +185,13 @@ cat WP312.contamination.table
 	--contamination-table WP312.contamination.table \
 	-O WP312.filtered.pon.vcf.gz
 ```
+### Visualizando resultado
+```
+less -SN WP312.filtered.pon.vcf.gz
+```
+### Retornando
+```
+q
+```
+
 
