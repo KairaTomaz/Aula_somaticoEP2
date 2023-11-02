@@ -193,5 +193,9 @@ less -SN WP312.filtered.pon.vcf.gz
 ```
 q
 ```
+### Quantas variantes têm no arquivo gerado?
+```
+zgrep -c ^chr9 WP312.filtered.pon.vcf.gz
+```
 
 
