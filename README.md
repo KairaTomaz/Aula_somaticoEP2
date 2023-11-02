@@ -35,9 +35,11 @@ wget -c https://storage.googleapis.com/gatk-best-practices/somatic-hg38/af-only-
 
 ```wget -c https://storage.googleapis.com/gatk-best-practices/somatic-hg38/small_exac_common_3.hg38.vcf.gz```
 
-```wget -c https://storage.googleapis.com/gatk-best-practices/somatic-hg38/small_exac_common_3.hg38.vcf.gz.tbi```
-
-```wget -c https://hgdownload.soe.ucsc.edu/goldenPath/hg38/chromosomes/chr9.fa.gz
+```wget -c https://storage.googleapis.com/gatk-best-practices/somatic-hg38/small_exac_common_3.hg38.vcf.gz.tbi
+```
+### Download do exoma
+```
+wget -c https://hgdownload.soe.ucsc.edu/goldenPath/hg38/chromosomes/chr9.fa.gz
 ```
 ### Instalando o BWA no gitpod
 ```
@@ -97,3 +99,9 @@ bedtools bamtobed -i WP312_sorted_rmdup_F4.bam > WP312_sorted_rmdup.bed
 bedtools merge -i WP312_sorted_rmdup.bed > WP312_sorted_rmdup_merged.bed
 bedtools sort -i WP312_sorted_rmdup_merged.bed > WP312_sorted_rmdup_merged_sorted.bed
 ```
+## Ao final desta etapa vc deverá ter esses aquivos e diretório:
+```
+ls
+```
+
+
