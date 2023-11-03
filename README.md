@@ -315,7 +315,7 @@ OBS.: Esta parte demorará um pouco mais que o normal!ls
 --contamination-table WP312.contamination.table \
 -O WP312.filtered.pon.vcf.gz
 ```
-### Agora vamos comparar os VCFs gerados com os VCFs do link abaixo
+### Agora vamos comparar os VCFs gerados com os VCFs, WP312.filtered.vcf e WP312.filtered.vcf.gz do link abaixo:
 (https://drive.google.com/drive/folders/1m2qmd0ca2Nwb7qcK58ER0zC8-1_9uAiE)
 
 ```
