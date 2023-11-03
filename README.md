@@ -231,7 +231,8 @@ wget -c  https://storage.googleapis.com/gatk-best-practices/somatic-b37/af-only-
 ```
 ### Cobertura
 ## mover arquivos necessários
-```cd hg38
+```
+cd hg38
 mv WP312_sorted_rmdup_F4.bam /workspace/somaticoEP2
 mv WP312_sorted_rmdup_merged_sorted.bed /workspace/somaticoEP2
 ```
@@ -268,6 +269,12 @@ grep  "^9" Mutect2-WGS-panel-b37.vcf |  awk '{print("chr"$0)}' >> Mutect2-WGS-pa
 bgzip Mutect2-WGS-panel-b37.chr.vcf 
 tabix -p vcf Mutect2-WGS-panel-b37.chr.vcf.gz
 ```
+### Movendo os arquivos GATK para o diretório em execução
+```
+cd hg38
+mv gatk-4.2.2.0 /workspace/somaticoEP2
+mv gatk-4.2.2.0.zip /workspace/somaticoEP2
+```
 
 ### Geraldo o arquivo .dict e interval
 ```
@@ -279,8 +286,9 @@ tabix -p vcf Mutect2-WGS-panel-b37.chr.vcf.gz
 
 ### Calculando contaminação
 ```
+gzip -k af-only-gnomad.raw.sites.chr.vcf
 ./gatk-4.2.2.0/gatk GetPileupSummaries \
-	-I WP312_sorted_rmdup.bam  \
+	-I WP312_sorted_rmdup_F4.bam  \
 	-V af-only-gnomad.raw.sites.chr.vcf.gz  \
 	-L WP312_coverageBed20x.interval_list \
 	-O WP312.table
