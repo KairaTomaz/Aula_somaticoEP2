@@ -298,7 +298,54 @@ gzip -k af-only-gnomad.raw.sites.chr.vcf
 -I WP312.table \
 -O WP312.contamination.table
 ```
+### Visualizando contaminação
+```
+cat  WP312.contamination.table
+```
+
 ### GATK Mutect2
+OBS.: Esta parte demorará um pouco mais que o normal!ls
+```
+ ./gatk-4.2.2.0/gatk Mutect2 \
+  -R chr9.fa \
+  -I WP312_sorted_rmdup_F4.bam \
+  --germline-resource af-only-gnomad.raw.sites.chr.vcf.gz  \
+  --panel-of-normals Mutect2-WGS-panel-b37.chr.vcf.gz \
+  --disable-sequence-dictionary-validation \
+  -L WP312_coverageBed20x.interval_list \
+  -O WP312.somatic.pon.vcf.gz
+```
+
+```
+  ./gatk-4.2.2.0/gatk FilterMutectCalls \
+-R chr9.fa \
+-V WP312.somatic.pon.vcf.gz \
+--contamination-table WP312.contamination.table \
+-O WP312.filtered.pon.vcf.gz
+```
+### Agora vamos comparar os VCFs gerados com os VCFs do link abaixo
+(https://drive.google.com/drive/folders/1m2qmd0ca2Nwb7qcK58ER0zC8-1_9uAiE)
+
+```
+zgrep "\#" WP312.filtered.vcf.gz > header.txt
+zgrep -v "\#" WP312.filtered.vcf.gz | awk '{print("chr"$0)}' > variants.txt
+cat header.txt variants.txt > WP312.filtered.chr.vcf
+bgzip WP312.filtered.chr.vcf
+tabix WP312.filtered.chr.vcf.gz
+```
+```
+zgrep "^\#\|chr9" WP312.filtered.chr.vcf.gz > WP312.filtered.chr9.vcf
+bgzip  WP312.filtered.chr9.vcf
+tabix WP312.filtered.chr9.vcf.gz
+```
+```
+brew install vcftools
+```
+### Realizando a comparação
+```
+vcf-compare WP312.filtered.pon.vcf.gz WP312.filtered.chr9.vcf.gz
+```
+
 
 
 
