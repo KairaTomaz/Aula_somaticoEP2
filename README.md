@@ -214,6 +214,18 @@ zgrep ^chr9 WP312.filtered.pon.vcf.gz | grep -c PASS
 vcf-compare liftOver_WP312_hg19Tohg38.vcf.gz WP312.filtered.pon.vcf.gz
 ```
 ![5 EP1_VCF_Comparação](https://github.com/KairaTomaz/Aula_somaticoEP2/assets/149710213/044573b8-2555-4ab5-815f-74c05a9c7ae9)
+### Criar uma pasta hg38 e mover os arquivos hg38 para lá
+```
+mkdir hg38
+mv * hg38
+```
 
-
-
+# Aula somatico EP2
+## Download doa arquivos de referência hg19
+```
+wget -c https://storage.googleapis.com/gatk-best-practices/somatic-b37/Mutect2-WGS-panel-b37.vcf
+wget -c https://storage.googleapis.com/gatk-best-practices/somatic-b37/Mutect2-WGS-panel-b37.vcf.idx
+wget -c  https://storage.googleapis.com/gatk-best-practices/somatic-b37/af-only-gnomad.raw.sites.vcf
+wget -c  https://storage.googleapis.com/gatk-best-practices/somatic-b37/af-only-gnomad.raw.sites.vcf.idx
+```
+### Cobertura
