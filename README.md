@@ -222,6 +222,7 @@ mv * hg38
 
 # Aula somatico EP2
 ## Download doa arquivos de referência hg19
+
 ```
 wget -c https://storage.googleapis.com/gatk-best-practices/somatic-b37/Mutect2-WGS-panel-b37.vcf
 wget -c https://storage.googleapis.com/gatk-best-practices/somatic-b37/Mutect2-WGS-panel-b37.vcf.idx
